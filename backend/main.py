@@ -27,6 +27,13 @@ def format_character_data(rows):
         characters.append(character)
     return characters
 
+def pages_count(total_rows):
+    pages = 0
+    while total_rows > 0:
+        pages = pages + 1
+        total_rows -= LIMIT
+    return pages
+
 
 @app.route('/', methods=['GET'])
 def get_characters():
@@ -44,14 +51,24 @@ def get_characters():
         page = int(request.args.get('page'))
         name = request.args.get('name')
         page = (page - 1) * LIMIT
+
+        cur.execute(f"SELECT COUNT(*) FROM characters WHERE name ILIKE '%{name}%'")
+        total_rows = cur.fetchone()[0]
+
         cur.execute(
             f"SELECT id, name, status, species, type, gender, origin_name, origin_url, location_name, location_url, image, url, created FROM characters WHERE name ILIKE '%{name}%' LIMIT {str(LIMIT)} OFFSET {str(page)}"
         )
         rows = cur.fetchall()
 
         characters = format_character_data(rows)
+        pages = pages_count(total_rows)
 
-        return make_response(jsonify(characters), 200)
+        response = {
+            'pages': pages,
+            'characters': characters
+        }
+
+        return make_response(jsonify(response), 200)
     except Exception as e:
         return make_response(jsonify(error=str(e)), 500)
     finally:
