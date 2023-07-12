@@ -1,11 +1,9 @@
-import React from "react";
+import Header from "./components/Header";
 
 const App = () => {
   return (
     <>
-      <main className="imgBg">
-        <div className="imgLogo"></div>
-      </main>
+      <Header />
     </>
   );
 };
