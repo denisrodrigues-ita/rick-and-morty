@@ -1,11 +1,6 @@
-import React from "react";
+import { ICharacter } from "../../interface/ICharacter";
 
-interface IProps {
-  character: string;
-  setCharacter: React.Dispatch<React.SetStateAction<string>>;
-}
-
-const Input = ({ character, setCharacter }: IProps) => {
+const Input = ({ character, setCharacter }: ICharacter) => {
   return (
     <>
       <input
