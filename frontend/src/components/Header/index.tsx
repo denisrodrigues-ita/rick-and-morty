@@ -3,11 +3,16 @@ import Input from "../Input";
 import { ICharacter } from "../../interface/ICharacter";
 
 interface IProps extends ICharacter {
-  handleSubmit: (event: React.MouseEvent<HTMLButtonElement | MouseEvent>) => void;
+  handleSubmit: (
+    event: React.MouseEvent<HTMLButtonElement | MouseEvent>
+  ) => void;
 }
 
-const Header = ({ character, setCharacter, handleSubmit }: IProps) => {
-  
+const Header = ({
+  character,
+  setCharacter,
+  handleSubmit,
+}: IProps) => {
   return (
     <header>
       <img className="self-center" src={logo} alt="Logo" />
