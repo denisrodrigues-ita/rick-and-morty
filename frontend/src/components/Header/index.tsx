@@ -8,11 +8,7 @@ interface IProps extends ICharacter {
   ) => void;
 }
 
-const Header = ({
-  character,
-  setCharacter,
-  handleSubmit,
-}: IProps) => {
+const Header = ({ character, setCharacter, handleSubmit }: IProps) => {
   return (
     <header>
       <img className="self-center" src={logo} alt="Logo" />

@@ -1,6 +1,7 @@
 import psycopg2
 from flask import Flask, make_response, jsonify, request
 
+
 LIMIT = 20
 
 app = Flask(__name__)
