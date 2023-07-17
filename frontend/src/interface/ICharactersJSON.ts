@@ -1,5 +1,6 @@
-export interface CharacterArray {
-  characters?: CharactersEntity[] | null;
+export interface ICharactersJSON {
+  characters: Array<CharactersEntity>;
+  pages: number;
 }
 export interface CharactersEntity {
   created: string;

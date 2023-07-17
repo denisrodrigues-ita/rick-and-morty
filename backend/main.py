@@ -1,11 +1,11 @@
 import psycopg2
 from flask import Flask, make_response, jsonify, request
-
+from flask_cors import CORS
 
 LIMIT = 20
 
 app = Flask(__name__)
-
+CORS(app)
 
 def format_character_data(rows):
     characters = []

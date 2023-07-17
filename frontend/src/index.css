@@ -14,4 +14,13 @@ body {
   header {
     @apply flex flex-col justify-center items-center gap-16;
   }
+  input {
+    @apply border-2 border-gray-300 bg-transparent rounded-md p-2 sm:w-72 text-white;
+  }
+}
+
+@layer components {
+  .btnSearch {
+    @apply border-2 border-gray-300 bg-transparent rounded-md p-2 text-white;
+  }
 }

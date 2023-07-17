@@ -15,7 +15,7 @@ const Header = ({ character, setCharacter, handleSubmit }: IProps) => {
       <form action="submit" className="w-full flex justify-center gap-4">
         <Input character={character} setCharacter={setCharacter} />
         <button
-          className="border-2 border-gray-300 bg-transparent rounded-md p-2 text-white"
+          className="btnSearch"
           type="submit"
           onClick={(e) => handleSubmit(e)}
         >
