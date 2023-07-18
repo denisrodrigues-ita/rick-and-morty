@@ -3,14 +3,14 @@ import styles from "./Loading.module.css";
 
 const Loading = () => {
   return (
-    <section className="flex flex-col justify-center items-center h-screen w-full">
+    <section className="load">
       <img
         src={loadingCard}
         alt="Loading"
-        className="w-1/2 mx-auto rounded-md border-2 border-zinc-600"
+        className="imgLoad"
       />
       <div className="flex items-center mt-8">
-        <p className="text-white text-2xl">Loading</p>
+        <p className="text-2xl">Loading</p>
         <div className={styles.wrapper}>
           <div className={styles.circle}></div>
           <div className={styles.circle}></div>

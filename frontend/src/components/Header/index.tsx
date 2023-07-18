@@ -11,8 +11,8 @@ interface IProps extends ICharacter {
 const Header = ({ character, setCharacter, handleSubmit }: IProps) => {
   return (
     <header>
-      <img className="self-center" src={logo} alt="Logo" />
-      <form action="submit" className="w-full flex justify-center gap-4">
+      <img src={logo} alt="Logo" />
+      <form action="submit">
         <Input character={character} setCharacter={setCharacter} />
         <button
           className="btnSearch"

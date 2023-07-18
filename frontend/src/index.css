@@ -9,18 +9,45 @@ body {
 
 @layer base {
   body {
-    @apply container mx-auto;
+    @apply container mx-auto text-white;
   }
   header {
     @apply flex flex-col justify-center items-center gap-16;
   }
   input {
-    @apply border-2 border-gray-300 bg-transparent rounded-md p-2 sm:w-72 text-white;
+    @apply border-2 border-gray-300 bg-transparent rounded-md p-2 sm:w-72;
+  }
+  h2 {
+    @apply text-2xl;
+  }
+  form {
+    @apply w-full flex justify-center gap-4;
   }
 }
 
 @layer components {
   .btnSearch {
-    @apply border-2 border-gray-300 bg-transparent rounded-md p-2 text-white;
+    @apply border-2 border-gray-300 bg-transparent rounded-md p-2;
+  }
+  .cards {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-16 sm:place-content-evenly place-items-center sm:place-items-stretch;
+  }
+  .card {
+    @apply border-2 border-gray-300 rounded-md;
+  }
+  .card_info {
+    @apply backdrop-blur-sm ps-2 my-2 gap-4;
+  }
+  .load {
+    @apply flex flex-col justify-center items-center h-screen w-full;
+  }
+  .imgLoad {
+    @apply w-1/2 mx-auto rounded-md border-2 border-zinc-600;
+  }
+  .imgCard {
+    @apply sm:w-full;
+  }
+  .pagination {
+    @apply flex justify-center gap-4;
   }
 }
