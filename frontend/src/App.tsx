@@ -42,6 +42,8 @@ const App = () => {
     handleFetch();
   }, [newCharacter, pages]);
 
+  console.log(data);
+
   if (loading) return <Loading />;
   return (
     <>
@@ -50,8 +52,8 @@ const App = () => {
         setCharacter={setCharacter}
         handleSubmit={handleSubmit}
       />
-      {data && <Cards data={data} />}
-      {data && (
+      {data?.characters && <Cards data={data} />}
+      {data?.pages && (
         <Pagination pages={pages} totalPages={totalPages} setPages={setPages} />
       )}
     </>

@@ -1,0 +1,11 @@
+SQLALCHEMY  -->  SERVE O MESMO PROPOSITO DO ENTITY FRAMEWORK, É um ORM, biblioteca que serve para fazer a conexão com o banco de dados, e fazer essa conexão SEGURA e FACILITADA
+
+flask-sqlachemy   <--- nome certo da lib
+
+
+virtual environment -> IMPLEMENTAR ISSO
+
+variaveis de ambiente -> dados sensiveis
+
+
+projeto novo com SQLALCHEMY e virtual environment
