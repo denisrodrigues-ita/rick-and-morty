@@ -1,7 +1,19 @@
+import React from "react";
 import { CharactersEntity } from "../../../interface/ICharactersJSON";
 
-const Card = ({ item }: { item: CharactersEntity }) => {
+interface CardProps {
+  item: CharactersEntity;
+  setModalContent: React.Dispatch<
+    React.SetStateAction<CharactersEntity | undefined>
+  >;
+  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
+const Card: React.FC<CardProps> = ({
+  item,
+  setModalContent,
+  setIsModalOpen,
+}) => {
   const truncateText = (text: string, num: number) => {
     if (num > 15) {
       text = `${text.slice(0, 15)}...`;
@@ -11,7 +23,13 @@ const Card = ({ item }: { item: CharactersEntity }) => {
   };
 
   return (
-    <div className="card">
+    <div
+      onClick={() => {
+        setModalContent(item);
+        setIsModalOpen(true);
+      }}
+      className="card"
+    >
       <div>
         <img
           src={item.image}
@@ -20,9 +38,7 @@ const Card = ({ item }: { item: CharactersEntity }) => {
         />
       </div>
       <div className="card_info">
-        <h2>
-          {truncateText(item.name, item.name.length)}
-        </h2>
+        <h2>{truncateText(item.name, item.name.length)}</h2>
         <p>{item.species}</p>
       </div>
     </div>

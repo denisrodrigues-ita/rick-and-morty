@@ -2,8 +2,9 @@ import React from "react";
 import Header from "./components/Header";
 import Loading from "./components/Loading";
 import Cards from "./components/Cards";
-import { ICharactersJSON } from "./interface/ICharactersJSON";
+import { ICharactersJSON, CharactersEntity } from "./interface/ICharactersJSON";
 import Pagination from "./components/Pagination";
+import Modal from "./components/Modal";
 
 const App = () => {
   const [character, setCharacter] = React.useState("");
@@ -12,6 +13,8 @@ const App = () => {
   const [data, setData] = React.useState<ICharactersJSON>();
   const [pages, setPages] = React.useState<number>(1);
   const [totalPages, setTotalPages] = React.useState<number>(0);
+  const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
+  const [modalContent, setModalContent] = React.useState<CharactersEntity>();
 
   const handleSubmit = (
     event: React.MouseEvent<HTMLButtonElement | MouseEvent>
@@ -42,8 +45,6 @@ const App = () => {
     handleFetch();
   }, [newCharacter, pages]);
 
-  console.log(data);
-
   if (loading) return <Loading />;
   return (
     <>
@@ -52,9 +53,18 @@ const App = () => {
         setCharacter={setCharacter}
         handleSubmit={handleSubmit}
       />
-      {data?.characters && <Cards data={data} />}
+      {data?.characters && (
+        <Cards
+          data={data}
+          setModalContent={setModalContent}
+          setIsModalOpen={setIsModalOpen}
+        />
+      )}
       {data?.pages && (
         <Pagination pages={pages} totalPages={totalPages} setPages={setPages} />
+      )}
+      {isModalOpen && modalContent && (
+        <Modal setIsModalOpen={setIsModalOpen} modalContent={modalContent} />
       )}
     </>
   );

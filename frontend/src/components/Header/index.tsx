@@ -15,7 +15,7 @@ const Header = ({ character, setCharacter, handleSubmit }: IProps) => {
       <form action="submit">
         <Input character={character} setCharacter={setCharacter} />
         <button
-          className="btnSearch"
+          className="btn"
           type="submit"
           onClick={(e) => handleSubmit(e)}
         >
