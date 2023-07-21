@@ -5,6 +5,7 @@ import Cards from "./components/Cards";
 import { ICharactersJSON, CharactersEntity } from "./interface/ICharactersJSON";
 import Pagination from "./components/Pagination";
 import Modal from "./components/Modal";
+import NotFound from "./components/NotFound";
 
 const App = () => {
   const [character, setCharacter] = React.useState("");
@@ -53,16 +54,18 @@ const App = () => {
         setCharacter={setCharacter}
         handleSubmit={handleSubmit}
       />
-      {data?.characters && (
+      {data?.characters && data?.characters.length > 0 ? (
         <Cards
           data={data}
           setModalContent={setModalContent}
           setIsModalOpen={setIsModalOpen}
         />
+      ) : (
+        data?.characters.length === 0 && <NotFound />
       )}
-      {data?.pages && (
+      {data?.pages && data?.pages > 0 ? (
         <Pagination pages={pages} totalPages={totalPages} setPages={setPages} />
-      )}
+      ) : null}
       {isModalOpen && modalContent && (
         <Modal setIsModalOpen={setIsModalOpen} modalContent={modalContent} />
       )}

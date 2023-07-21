@@ -14,6 +14,7 @@ interface CardsProps {
 }
 
 const Cards: React.FC<CardsProps> = ({ data, setModalContent, setIsModalOpen }) => {
+
   return (
     <section className="cards">
       {data.characters.map((item: CharactersEntity) => (
