@@ -15,34 +15,43 @@ body {
     @apply flex flex-col justify-center items-center gap-16;
   }
   input {
-    @apply border-2 border-gray-300 bg-transparent rounded-md p-2 sm:w-72;
+    @apply border-2 border-white bg-transparent rounded-lg p-2 sm:w-72 placeholder-gray-placeholder;
   }
   h2 {
-    @apply text-2xl;
+    @apply text-xl;
   }
   form {
     @apply w-full flex justify-center gap-4;
+  }
+  img {
+    @apply rounded-t-lg
   }
 }
 
 @layer components {
   .btn {
-    @apply border-2 border-gray-300 bg-transparent rounded-md py-2 px-4;
+    @apply border-2 border-white bg-transparent rounded-lg py-2 px-4;
   }
   .cards {
     @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-16 sm:place-content-evenly place-items-center sm:place-items-stretch;
   }
   .card {
-    @apply border-2 border-gray-300 rounded-md hover:shadow-md hover:shadow-yellow-300 hover:border-yellow-300;
+    @apply border-2 border-brow-border rounded-lg hover:shadow-md hover:shadow-custom-yellow hover:border-custom-yellow;
   }
   .card_info {
-    @apply backdrop-blur-sm ps-2 py-2 gap-4 rounded-b-md;
+    @apply backdrop-blur-sm ps-2 py-2 gap-4 rounded-b-lg text-xs;
+  }
+  .card_info_modal {
+    @apply backdrop-blur-sm ps-2 py-2 gap-4 rounded-b-lg text-xl;
+  }
+  .info_modal {
+    @apply text-base md:text-2xl;
   }
   .load {
     @apply flex flex-col justify-center items-center h-screen w-full;
   }
   .imgLoad {
-    @apply w-1/2 mx-auto rounded-md border-2 border-zinc-600;
+    @apply w-1/2 mx-auto rounded-lg border-2 border-zinc-600;
   }
   .imgCard {
     @apply sm:w-full;
@@ -54,6 +63,6 @@ body {
     @apply fixed inset-0 flex justify-center items-center z-10;
   }
   .cardInformation {
-    @apply uppercase text-2xl tracking-widest text-yellow-400 mt-8;
+    @apply uppercase text-sm tracking-widest text-custom-yellow mt-8;
   }
 }

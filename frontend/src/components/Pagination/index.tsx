@@ -38,7 +38,7 @@ const Pagination = ({ pages, totalPages, setPages }: IPages) => {
       </button>
       {arrayPages.map((page) => (
         <button
-          className={page === pages ? "text-yellow-300" : ""}
+          className={page === pages ? "text-custom-yellow" : ""}
           key={page}
           onClick={() => setPages(page)}
           disabled={page === pages}
