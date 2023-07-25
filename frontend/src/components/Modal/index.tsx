@@ -1,6 +1,5 @@
 import React from "react";
 import { CharactersEntity } from "../../interface/ICharactersJSON";
-import { AiOutlineClose } from "react-icons/ai";
 
 interface ModalProps {
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -10,12 +9,12 @@ interface ModalProps {
 const Modal: React.FC<ModalProps> = ({ setIsModalOpen, modalContent }) => {
   return (
     <div className="modal">
-      <div className="flex flex-col lg:flex-row">
-        <div className="backdrop-blur-3xl pb-8 rounded-t-lg lg:rounded-tr-none lg:rounded-s-lg">
+      <div className="flex flex-col xl:flex-row w-96 xl:w-auto">
+        <div className="backdrop-blur-3xl pb-8 rounded-t-lg xl:rounded-tr-none xl:rounded-s-lg">
           <button onClick={() => setIsModalOpen(false)} className="btn m-4">
             Close
           </button>
-          <div className="card lg:-translate-x-12 w-2/3 lg:w-full m-auto">
+          <div className="card xl:-translate-x-12 w-2/3 xl:w-full m-auto">
             <div>
               <img
                 src={modalContent.image}
@@ -29,7 +28,7 @@ const Modal: React.FC<ModalProps> = ({ setIsModalOpen, modalContent }) => {
             </div>
           </div>
         </div>
-        <div className="bg-black rounded-b-lg lg:rounded-tr-lg lg:rounded-bl-none flex flex-col">
+        <div className="bg-black rounded-b-lg xl:rounded-tr-lg xl:rounded-bl-none flex flex-col">
           <div className="m-8">
             <h3 className="cardInformation">About</h3>
             <p className="info_modal">{`${modalContent.name} is a ${

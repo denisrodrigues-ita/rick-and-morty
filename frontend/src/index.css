@@ -24,7 +24,7 @@ body {
     @apply w-full flex justify-center gap-4;
   }
   img {
-    @apply rounded-t-lg
+    @apply rounded-t-lg;
   }
 }
 
@@ -48,7 +48,7 @@ body {
     @apply text-base md:text-2xl;
   }
   .load {
-    @apply flex flex-col justify-center items-center h-screen w-full;
+    @apply flex flex-col justify-center items-center h-screen;
   }
   .imgLoad {
     @apply w-1/2 mx-auto rounded-lg border-2 border-zinc-600;
@@ -60,7 +60,7 @@ body {
     @apply flex justify-center gap-8 mb-40;
   }
   .modal {
-    @apply fixed inset-0 flex justify-center items-center z-10;
+    @apply fixed inset-0 flex justify-center items-center z-10 ;
   }
   .cardInformation {
     @apply uppercase text-sm tracking-widest text-custom-yellow mt-8;
