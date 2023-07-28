@@ -4,9 +4,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        'custom-yellow': '#CBD736',
-        'brow-border': '#606060',
-        'gray-placeholder': '#9F9F9F',
+        "custom-yellow": "#CBD736",
+        "brow-border": "#606060",
+        "gray-placeholder": "#9F9F9F",
       },
     },
   },
